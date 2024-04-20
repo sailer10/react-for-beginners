@@ -5,9 +5,12 @@ function Footer() {
     return (
         <footer className="p-5 bg-light border-top">
             <Container>
-                <p>Designed by Bootstrap</p>
+                <p>
+                    Designed by
+                    <strong> Bootstrap</strong>
+                </p>
                 <p className="mb-0">
-                    <a href="#">Back to Top</a>
+                    <a href="#">위로가기</a>
                 </p>
             </Container>
         </footer>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 import Container from 'react-bootstrap/Container';
 import "../style.css";
+import { Col, Row } from "react-bootstrap";
 
 
 
@@ -49,23 +50,30 @@ function Home() {
         getMovies();
     }, []);
 
+    /*
+        
+    */
     return (
-        <Container className="my-container">
-            {loading ? <h1></h1> : movies.map(movie => (
-                <div>
-                    <br/>
-                    <Movie 
-                        id={movie.id}
-                        key={movie.id}// key 값을 넣는건 매우 중요하다! 키는 React.js 의 map 안에서 Compoonent 들을 rendering 할때 사용한다!!
-                        image={movie.medium_cover_image} 
-                        genres={movie.genres}
-                        summary={movie.summary}
-                        title={movie.title}
-                        year={movie.year}
-                    />
-                    <br/>
-                </div>
-            ))}
+        <Container className="my-container" fluid>
+            {loading ? <h1></h1> : 
+                <Row>
+                    {movies.map(movie => (
+                        <Col sm={4}>
+                            <br/>
+                            <Movie 
+                                id={movie.id}
+                                key={movie.id}// key 값을 넣는건 매우 중요하다! 키는 React.js 의 map 안에서 Compoonent 들을 rendering 할때 사용한다!!
+                                image={movie.medium_cover_image} 
+                                genres={movie.genres}
+                                summary={movie.summary}
+                                title={movie.title}
+                                year={movie.year}
+                            />
+                            <br/>
+                        </Col>
+                    ))}
+                </Row>
+            }
         </Container>
     );
 }

@@ -9,6 +9,7 @@ import Detail from "./routes/Detail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
@@ -22,14 +23,12 @@ function App() {
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Header/>
-
-            <article className="main">
-                <Routes>
-                    {/* : 콜론을 씀으로써 변수(Dynamic url)를 사용할 수 있다. */}
-                    <Route path="/movie/:id" element={<Detail/>}/>
-                    <Route path="/" element={<Home/>}/>
-                </Routes>
-            </article>
+            <ScrollToTop/>
+            <Routes>
+                {/* : 콜론을 씀으로써 변수(Dynamic url)를 사용할 수 있다. */}
+                <Route path="/movie/:id" element={<Detail/>}/>
+                <Route path="/" element={<Home/>}/>
+            </Routes>
 
             <Footer/>
         </BrowserRouter>

@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "./Movie.module.css"
 
 function Movie({id, image, title, year, summary, genres}) {
     return (
-        <div>
+        <Link to={`/movie/${id}`} className="card movie-card-size" style={{textDecoration: "none"}}>
             <img src={image} alt="image loading..."/>
             <h2>
-                <Link to={`/movie/${id}`}>{title} ({year})</Link>    
+                <super to={`/movie/${id}`}>{title} ({year})</super>    
             </h2>
             <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
             {genres ? 
@@ -14,7 +15,8 @@ function Movie({id, image, title, year, summary, genres}) {
                     {genres.map(g => <li key={g}>{g}</li>)}
                 </ul> : null
             }
-        </div>
+        </Link>
+            
     );
 }
 

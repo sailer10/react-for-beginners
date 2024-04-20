@@ -4,7 +4,7 @@ import Movie from "../components/Movie";
 import Container from "react-bootstrap/esm/Container";
 import "../style.css";
 
-function Detail() {
+export default function Detail() {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [details, setDetails] = useState();
@@ -45,4 +45,3 @@ function Detail() {
     );
 }
 
-export default Detail;

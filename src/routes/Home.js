@@ -21,17 +21,17 @@ function Home() {
         */
 
         // await 를 두번하는 이유: fetch 함수를 쓸때 await 를 쓰고 반환받은 promise 를 처리하기 위해 await 를 한번 더 사용해야한다.
+
         const json = await(
             await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year`, 
             {
                 method: 'GET', 
-                cache: 'force-cache',  
+                cache: 'default',  
             }
         )
         ).json();
         setMovies(json.data.movies);
         setLoading(false);
-        console.log(movies);
 
         /*
         요즘엔 then 이런 구절보다 위의 async() => { await fetch(); } 이런식으로 써준다고 한다.

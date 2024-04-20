@@ -1,8 +1,8 @@
 import Home from "./routes/Home";
 import {
-    BrowserRouter as Router,
     Routes,
     Route,
+    BrowserRouter,
 } from 'react-router-dom'
 import Detail from "./routes/Detail";
 
@@ -20,19 +20,19 @@ function App() {
     <Link to="/movie"> 를 통해 ROute 를 이동한다. 이렇게 하면 페이지를 새로고침 하지 않는다. Movie.js 에 보면 Link 있음
     */
     return (
-        <Router>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Header/>
 
             <article className="main">
                 <Routes>
                     {/* : 콜론을 씀으로써 변수(Dynamic url)를 사용할 수 있다. */}
                     <Route path="/movie/:id" element={<Detail/>}/>
-                    <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
+                    <Route path="/" element={<Home/>}/>
                 </Routes>
             </article>
 
             <Footer/>
-        </Router>
+        </BrowserRouter>
     );
 }
 

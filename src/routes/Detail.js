@@ -14,15 +14,14 @@ function Detail() {
             await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`, 
             {
                 method: 'GET',
-                cache: 'force-cache',
+                cache: 'default',
             })
         ).json();
         setDetails(json.data.movie);
-        console.log(details);
 
         setLoading(true);
     }
-    console.log(details);
+
     useEffect(() => {
         getMovie();
     }, []);

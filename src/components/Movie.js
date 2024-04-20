@@ -7,7 +7,7 @@ function Movie({id, image, title, year, summary, genres}) {
         <Link to={`/movie/${id}`} className="card movie-card-size" style={{textDecoration: "none"}}>
             <img src={image} alt="image loading..."/>
             <h2>
-                <super to={`/movie/${id}`}>{title} ({year})</super>    
+                <super>{title} ({year})</super>    
             </h2>
             <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
             {genres ? 

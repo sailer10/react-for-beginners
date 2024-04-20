@@ -8,6 +8,7 @@ function Movie({id, image, title, year, summary, genres}) {
             <img src={image} alt="image loading..."/>
             <h2>
                 <super>{title} ({year})</super>
+                <p>test for git pull</p>
             </h2>
             <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
             {genres ? 

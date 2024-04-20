@@ -26,8 +26,8 @@ function App() {
             <article className="main">
                 <Routes>
                     {/* : 콜론을 씀으로써 변수(Dynamic url)를 사용할 수 있다. */}
-                    <Route path="/movie/:id" element={<Detail/>}/>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/movie/:id`} element={<Detail/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
                 </Routes>
             </article>
 

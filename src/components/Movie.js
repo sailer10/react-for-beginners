@@ -9,6 +9,7 @@ function Movie({id, image, title, year, summary, genres}) {
             <h2>
                 <super>{title} ({year})</super>
                 <p>test for git pull</p>
+                <p>깃허브 홈페이지에서 추가한 내용</p>
             </h2>
             <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
             {genres ? 

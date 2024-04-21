@@ -24,7 +24,7 @@ function Home() {
         // await 를 두번하는 이유: fetch 함수를 쓸때 await 를 쓰고 반환받은 promise 를 처리하기 위해 await 를 한번 더 사용해야한다.
 
         const json = await(
-            await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year`, 
+            await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=download_count`, 
             {
                 method: 'GET', 
                 cache: 'default',  
@@ -54,11 +54,11 @@ function Home() {
         
     */
     return (
-        <Container className="my-container" fluid>
+        <Container fluid className="my-container" >
             {loading ? <h1></h1> : 
                 <Row>
                     {movies.map(movie => (
-                        <Col sm={4}>
+                        <Col sm={8} md={5} lg={4} className="mx-auto">
                             <br/>
                             <Movie 
                                 id={movie.id}

@@ -27,12 +27,12 @@ export default function Detail() {
     }, []);
 
     return (
-        <Container className="my-container">
+        <Container fluid className="my-container">
             {!loading ? <h2></h2> :
                 <div>
                     <img src={details.large_cover_image}/>
                     <h1>{details.title}</h1>
-                    <p>{details.description_full ? details.description_full : "요약 없음"}</p>
+                    <p>{details.description_full ? details.description_full : "줄거리 요약 없음"}</p>
                     {details.genres ? 
                         <ul>
                             {details.genres.map(g => <li key={g}>{g}</li>)}

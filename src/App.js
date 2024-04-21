@@ -5,11 +5,13 @@ import {
     BrowserRouter,
 } from 'react-router-dom'
 import Detail from "./routes/Detail";
+import Header from "./components/layout/Header"
+import Footer from "./components/layout/Footer"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Local from "./routes/Local";
+import ToTheTop from "./components/layout/ToTheTop";
 
 
 function App() {
@@ -28,8 +30,9 @@ function App() {
                 {/* : 콜론을 씀으로써 변수(Dynamic url)를 사용할 수 있다. */}
                 <Route path="/movie/:id" element={<Detail/>}/>
                 <Route path="/" element={<Home/>}/>
+                <Route path="/local" element={<Local/>} />
             </Routes>
-
+            <ToTheTop/>
             <Footer/>
         </BrowserRouter>
     );
